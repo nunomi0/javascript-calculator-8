@@ -8,7 +8,11 @@ class App {
     try {
       const { delimiter, numbersPart } = Validator(inputString);
       const regex = new RegExp(delimiter);
-
+      const numbers = numbersPart.split(regex).map(Number);
+      
+      if (numbers.some((n) => n <= 0 || isNaN(n))) {
+        throw new Error('[ERROR] 0 또는 음수를 입력할 수 없습니다.');
+      }
     } catch (error) {
       Console.print(error.message);
     }
