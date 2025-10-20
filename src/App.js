@@ -5,7 +5,6 @@ class App {
   async run() {
     const inputString = await Console.readLineAsync('덧셈할 문자열을 입력해 주세요.\n');
 
-    try {
       const { delimiter, numbersPart } = Validator(inputString);
       const regex = new RegExp(delimiter);
       const numbers = numbersPart.split(regex).map(Number);
@@ -16,9 +15,6 @@ class App {
 
       const sum = numbers.reduce((acc, cur) => acc + cur, 0);
       Console.print(`결과 : ${sum}`);
-    } catch (error) {
-      Console.print(error.message);
-    }
   }
 }
 
