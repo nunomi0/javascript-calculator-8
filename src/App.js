@@ -13,6 +13,9 @@ class App {
       if (numbers.some((n) => n <= 0 || isNaN(n))) {
         throw new Error('[ERROR] 0 또는 음수를 입력할 수 없습니다.');
       }
+
+      const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+
     } catch (error) {
       Console.print(error.message);
     }
