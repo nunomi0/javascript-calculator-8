@@ -15,7 +15,7 @@ class App {
       }
 
       const sum = numbers.reduce((acc, cur) => acc + cur, 0);
-
+      Console.print(`결과 : ${sum}`);
     } catch (error) {
       Console.print(error.message);
     }
