@@ -40,7 +40,13 @@ class App {
       }
     }
     numbers.push(Number(cur));
-    Console.print(numbers);
+
+    // 덧셈
+    let answer = 0;
+    for (const num of numbers) answer+=num;
+
+    // 출력
+    Console.print("결과 : " + answer);
   }
 }
 
